@@ -1,15 +1,9 @@
 package nl.leonvanderkaap.licenseplates;
 
-import nl.leonvanderkaap.licenseplates.model.masterdata.Country;
 import nl.leonvanderkaap.licenseplates.model.masterdata.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import java.util.List;
-import java.util.Optional;
 
 @SpringBootApplication
 public class Main {
@@ -21,14 +15,4 @@ public class Main {
         SpringApplication.run(Main.class, args);
     }
 
-    @Bean
-    public CommandLineRunner demo(CountryRepository repository) {
-        return (args) -> {
-            repository.save(new Country("NL"));
-            List<Country> countries = repository.findAll();
-            Optional<Country> ct = repository.findOne("NL");
-            System.out.println(ct.isPresent());
-            System.out.println(countries.size());
-        };
-    }
 }
