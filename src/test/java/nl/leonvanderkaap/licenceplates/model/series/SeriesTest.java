@@ -17,20 +17,23 @@ public class SeriesTest {
 
     @Test
     public void createSeries() {
-        Series series = new Series(netherlands, "(0-9){2}-(A-Z){2}-(0-9){2}",
+        Series series = new Series(netherlands,"name",
+                "(0-9){2}-(A-Z){2}-(0-9){2}",
                 "(0-9){2}(A-Z){2}(0-9){2}");
     }
 
     @Test
     public void seriesMatchesString() {
-        Series series = new Series(netherlands, "[0-9]{2}-[A-Z]{2}-[0-9]{2}",
+        Series series = new Series(netherlands, "name",
+                "[0-9]{2}-[A-Z]{2}-[0-9]{2}",
                 "(0-9){2}(A-Z){2}(0-9){2}");
         Assert.assertTrue(series.stringMatchesSeries("12-AZ-31"));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void invalidRegexFails() {
-        Series series = new Series(netherlands, "([0-9]{2}-[A-Z]{2}-[0-9]{2}",
+        Series series = new Series(netherlands,"name",
+                "([0-9]{2}-[A-Z]{2}-[0-9]{2}",
                 "(0-9){2}(A-Z){2}(0-9){2}");
     }
 }

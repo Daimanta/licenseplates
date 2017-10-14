@@ -14,5 +14,5 @@ public interface PracticalRepository<T, ID extends Serializable> extends Reposit
     List<T> findAll();
     Optional<T> findOne(ID id);
 
-    void save(Country nl);
+    void save(T type);
 }

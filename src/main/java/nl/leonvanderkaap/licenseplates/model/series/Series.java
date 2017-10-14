@@ -21,12 +21,15 @@ public class Series {
     @ManyToOne(optional = false)
     private Country country;
 
+    private String name;
+
     private String strippedRegex;
 
     private String fullRegex;
 
-    public Series(Country country, String strippedRegex, String fullRegex) {
+    public Series(Country country, String name, String strippedRegex, String fullRegex) {
         this.country = country;
+        this.name = name;
         if (!isRegex(strippedRegex)) {
             throw new IllegalArgumentException("Stripped regex is not a regex");
         }
