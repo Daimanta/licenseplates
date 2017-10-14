@@ -1,15 +1,13 @@
-package nl.leonvanderkaap;
+package nl.leonvanderkaap.licenseplates;
 
-import nl.leonvanderkaap.model.masterdata.Country;
-import nl.leonvanderkaap.model.masterdata.CountryRepository;
+import nl.leonvanderkaap.licenseplates.model.masterdata.Country;
+import nl.leonvanderkaap.licenseplates.model.masterdata.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import javax.swing.*;
 import java.util.List;
 import java.util.Optional;
 

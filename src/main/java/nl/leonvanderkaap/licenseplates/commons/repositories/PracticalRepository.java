@@ -1,6 +1,6 @@
-package nl.leonvanderkaap.commons.repositories;
+package nl.leonvanderkaap.licenseplates.commons.repositories;
 
-import nl.leonvanderkaap.model.masterdata.Country;
+import nl.leonvanderkaap.licenseplates.model.masterdata.Country;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.Repository;
 
