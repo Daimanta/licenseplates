@@ -3,7 +3,9 @@ package nl.leonvanderkaap.licenseplates.model.series;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import nl.leonvanderkaap.licenseplates.model.masterdata.Country;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 
@@ -20,11 +22,11 @@ public class Series {
 
     @ManyToOne(optional = false)
     private Country country;
-
+    @Setter
     private String name;
-
+    @Setter
     private String strippedRegex;
-
+    @Setter
     private String fullRegex;
 
     public Series(Country country, String name, String strippedRegex, String fullRegex) {

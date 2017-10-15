@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface SeriesRepository extends PracticalRepository<Series, Long>{
 
-    @Query(value = "SELECT * FROM Series as s WHERE UPPER(?1) ~ s.strippedRegex OR  UPPER(?1) ~ s.fullRegex", nativeQuery = true)
+    @Query(value = "SELECT * FROM series WHERE ?1 ~* stripped_regex OR ?1 ~* full_regex",
+            nativeQuery = true)
     List<Series> findMatchingSeries(String licencePlate);
 }

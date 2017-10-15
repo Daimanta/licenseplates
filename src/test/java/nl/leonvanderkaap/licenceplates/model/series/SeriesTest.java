@@ -25,9 +25,10 @@ public class SeriesTest {
     @Test
     public void seriesMatchesString() {
         Series series = new Series(netherlands, "name",
-                "[0-9]{2}-[A-Z]{2}-[0-9]{2}",
-                "(0-9){2}(A-Z){2}(0-9){2}");
+                "[0-9]{2}[A-Z]{2}[0-9]{2}",
+                "[0-9]{2}-[A-Z]{2}-[0-9]{2}");
         Assert.assertTrue(series.stringMatchesSeries("12-AZ-31"));
+        Assert.assertTrue(series.stringMatchesSeries("12AZ31"));
     }
 
     @Test(expected = IllegalArgumentException.class)
