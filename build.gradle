@@ -19,5 +19,6 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.16'
     compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
     compile "org.springframework.boot:spring-boot-starter-security:1.5.7.RELEASE"
+    compile 'org.flywaydb:flyway-core:4.2.0'
 
 }
